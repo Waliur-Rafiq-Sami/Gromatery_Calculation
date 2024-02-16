@@ -17,7 +17,7 @@
   </head>
   <body class="p-8">
     <header></header>
-    <main>
+    <main class="container mx-auto">
       <!-- main contain container  -->
       <div class="flex gap-8 flex-col md:flex-row">
         <!-- shape card container -->
@@ -35,10 +35,11 @@
               <h2 class="-mt-5">Triangle</h2>
               <p>Area (A) = 0.5 X b X h</p>
               <div
-                class="input_contant flex flex-row md:flex-col lg:flex-row items-center gap-2 mt-1 mb-5 justify-center"
+                class="input_contant flex flex-row md:flex-col lg:flex-row items-center gap-2 mt-1 mb-2 justify-center"
               >
                 <div>
                   <input
+                    id="triangle_base_input"
                     placeholder="b"
                     class="shadow-xl px-2 border-2 border-gray-700 rounded-md max-w-20"
                     type="text"
@@ -47,6 +48,7 @@
                 </div>
                 <div>
                   <input
+                    id="triangle_hight_input"
                     placeholder="h"
                     class="shadow-xl px-2 border-2 border-gray-700 rounded-md max-w-20"
                     type="text"
@@ -54,8 +56,19 @@
                   <span class="mr-3">cm</span>
                 </div>
               </div>
+              <!-- display -->
+              <div class="mb-2">
+                <p>
+                  Area:
+                  <span id="displayOfTriangleCalcilation"> 0 </span> cm<sup
+                    >2</sup
+                  >
+                </p>
+              </div>
               <div class="lg:mx-3 mx-7">
                 <button
+                  id="triangle-button"
+                  onclick="calculateTrinagleArea()"
                   class="btn btn-secondary w-full text-xl -mb-5 btn-outline"
                 >
                   Calculation
@@ -71,14 +84,15 @@
               <img class="h-full" src="./images/rectangle.png" alt="Shoes" />
             </figure>
             <div class="card-body text-center -mx-10">
-              <h2 class="-mt-5">Triangle</h2>
-              <p>Area (A) = 0.5 X b X h</p>
+              <h2 class="-mt-5">Rectangle</h2>
+              <p>Area (A) = w x l</p>
               <div
-                class="input_contant flex flex-row md:flex-col lg:flex-row items-center gap-2 mt-1 mb-5 justify-center"
+                class="input_contant flex flex-row md:flex-col lg:flex-row items-center gap-2 mt-1 mb-2 justify-center"
               >
                 <div>
                   <input
-                    placeholder="b"
+                    id="Rectangle_width_input"
+                    placeholder="w"
                     class="shadow-xl px-2 border-2 border-gray-700 rounded-md max-w-20"
                     type="text"
                   />
@@ -86,15 +100,26 @@
                 </div>
                 <div>
                   <input
-                    placeholder="h"
+                    id="Rectangle_length_input"
+                    placeholder="l"
                     class="shadow-xl px-2 border-2 border-gray-700 rounded-md max-w-20"
                     type="text"
                   />
                   <span class="mr-3">cm</span>
                 </div>
               </div>
+              <!-- display -->
+              <div class="mb-2">
+                <p>
+                  Area: <span id="displayOfRectangCalcilation"> 0 </span> cm<sup
+                    >2</sup
+                  >
+                </p>
+              </div>
               <div class="lg:mx-3 mx-7">
                 <button
+                  id="triangle-button"
+                  onclick="calculateRectangleArea()"
                   class="btn btn-secondary w-full text-xl -mb-5 btn-outline"
                 >
                   Calculation
@@ -114,13 +139,14 @@
               />
             </figure>
             <div class="card-body text-center -mx-10">
-              <h2 class="-mt-5">Triangle</h2>
-              <p>Area (A) = 0.5 X b X h</p>
+              <h2 class="-mt-5">Parallelogram</h2>
+              <p>Area (A) = b x h</p>
               <div
-                class="input_contant flex flex-row md:flex-col lg:flex-row items-center gap-2 mt-1 mb-5 justify-center"
+                class="input_contant flex flex-row md:flex-col lg:flex-row items-center gap-2 mt-1 mb-2 justify-center"
               >
                 <div>
                   <input
+                    id="Parallelogram_base_input"
                     placeholder="b"
                     class="shadow-xl px-2 border-2 border-gray-700 rounded-md max-w-20"
                     type="text"
@@ -129,6 +155,7 @@
                 </div>
                 <div>
                   <input
+                    id="Parallelogram_hight_input"
                     placeholder="h"
                     class="shadow-xl px-2 border-2 border-gray-700 rounded-md max-w-20"
                     type="text"
@@ -136,8 +163,19 @@
                   <span class="mr-3">cm</span>
                 </div>
               </div>
+              <!-- display -->
+              <div class="mb-2">
+                <p>
+                  Area:
+                  <span id="displayOfParallelogramCalcilation"> 0 </span> cm<sup
+                    >2</sup
+                  >
+                </p>
+              </div>
               <div class="lg:mx-3 mx-7">
                 <button
+                  id="triangle-button"
+                  onclick="calculateParallelogramleArea()"
                   class="btn btn-secondary w-full text-xl -mb-5 btn-outline"
                 >
                   Calculation
@@ -153,14 +191,16 @@
               <img class="h-full" src="./images/rhombus.png" alt="Shoes" />
             </figure>
             <div class="card-body text-center -mx-10">
-              <h2 class="-mt-5">Triangle</h2>
-              <p>Area (A) = 0.5 X b X h</p>
+              <h2 class="-mt-5">Rhombus</h2>
+              <p>Area (A) =0.5 x d<sub>1</sub> x d<sub>2</sub></p>
               <div
-                class="input_contant flex flex-row md:flex-col lg:flex-row items-center gap-2 mt-1 mb-5 justify-center"
+                class="input_contant flex flex-row md:flex-col lg:flex-row items-center gap-2 mt-1 mb-2 justify-center"
               >
                 <div>
                   <input
-                    placeholder="b"
+                    onkeyup="rhombusKeyUpD_1()"
+                    id="Rhombus_d_1_input"
+                    placeholder="d_1"
                     class="shadow-xl px-2 border-2 border-gray-700 rounded-md max-w-20"
                     type="text"
                   />
@@ -168,15 +208,42 @@
                 </div>
                 <div>
                   <input
-                    placeholder="h"
+                    onkeyup="rhombusKeyUpD_2()"
+                    id="Rhombus_d_2_input"
+                    placeholder="d_2"
                     class="shadow-xl px-2 border-2 border-gray-700 rounded-md max-w-20"
                     type="text"
                   />
                   <span class="mr-3">cm</span>
                 </div>
               </div>
+              <!-- display -->
+              <div>
+                <p>
+                  <span>
+                    d<sub>1</sub> =
+                    <span id="Rhombus_d_1_input_show"></span>
+                    cm
+                  </span>
+                  <span class="ml-5">
+                    d<sub>2</sub> =
+                    <span id="Rhombus_d_2_input_show"></span>
+                    cm
+                  </span>
+                </p>
+              </div>
+              <div class="mb-2">
+                <p>
+                  Area:
+                  <span id="displayOfRhombusCalcilation"> 0 </span> cm<sup
+                    >2</sup
+                  >
+                </p>
+              </div>
               <div class="lg:mx-3 mx-7">
                 <button
+                  id="triangle-button"
+                  onclick="calculateRhombusleArea()"
                   class="btn btn-secondary w-full text-xl -mb-5 btn-outline"
                 >
                   Calculation
@@ -192,30 +259,59 @@
               <img class="h-full" src="./images/pentagon.png" alt="Shoes" />
             </figure>
             <div class="card-body text-center -mx-10">
-              <h2 class="-mt-5">Triangle</h2>
-              <p>Area (A) = 0.5 X b X h</p>
+              <h2 class="-mt-5">Pentagon</h2>
+              <p>Area (A) =0.5 x p x b</p>
               <div
-                class="input_contant flex flex-row md:flex-col lg:flex-row items-center gap-2 mt-1 mb-5 justify-center"
+                class="input_contant flex flex-row md:flex-col lg:flex-row items-center gap-2 mt-1 mb-2 justify-center"
               >
                 <div>
                   <input
+                    onkeyup="Pentagon_p_input()"
+                    id="Pentagon_p_input"
+                    placeholder="p"
+                    class="shadow-xl px-2 border-2 border-gray-700 rounded-md max-w-20"
+                    type="text"
+                  />
+                  <span class="mr-3">cm</span>
+                </div>
+                <div>
+                  <input
+                    onkeyup="Pentagon_b_input()"
+                    id="Pentagon_b_input"
                     placeholder="b"
                     class="shadow-xl px-2 border-2 border-gray-700 rounded-md max-w-20"
                     type="text"
                   />
                   <span class="mr-3">cm</span>
                 </div>
-                <div>
-                  <input
-                    placeholder="h"
-                    class="shadow-xl px-2 border-2 border-gray-700 rounded-md max-w-20"
-                    type="text"
-                  />
-                  <span class="mr-3">cm</span>
-                </div>
+              </div>
+              <!-- display -->
+              <div>
+                <p>
+                  <span>
+                    p =
+                    <span id="Pentagon_p_input_show"></span>
+                    cm
+                  </span>
+                  <span class="ml-5">
+                    b =
+                    <span id="Pentagon_b_input_show"></span>
+                    cm
+                  </span>
+                </p>
+              </div>
+              <div class="mb-2">
+                <p>
+                  Area:
+                  <span id="displayOfPentagonCalcilation"> 0 </span> cm<sup
+                    >2</sup
+                  >
+                </p>
               </div>
               <div class="lg:mx-3 mx-7">
                 <button
+                  id="triangle-button"
+                  onclick="calculatePentagonleArea()"
                   class="btn btn-secondary w-full text-xl -mb-5 btn-outline"
                 >
                   Calculation
@@ -231,30 +327,58 @@
               <img class="h-full" src="./images/ellipse.png" alt="Shoes" />
             </figure>
             <div class="card-body text-center -mx-10">
-              <h2 class="-mt-5">Triangle</h2>
-              <p>Area (A) = 0.5 X b X h</p>
+              <h2 class="-mt-5">Ellipse</h2>
+              <p>Area (A) = πab</p>
               <div
-                class="input_contant flex flex-row md:flex-col lg:flex-row items-center gap-2 mt-1 mb-5 justify-center"
+                class="input_contant flex flex-row md:flex-col lg:flex-row items-center gap-2 mt-1 mb-2 justify-center"
               >
                 <div>
                   <input
+                    onkeyup="Ellipse_a_input()"
+                    id="Ellipse_a_input"
+                    placeholder="a"
+                    class="shadow-xl px-2 border-2 border-gray-700 rounded-md max-w-20"
+                    type="text"
+                  />
+                  <span class="mr-3">cm</span>
+                </div>
+                <div>
+                  <input
+                    onkeyup="Ellipse_b_input()"
+                    id="Ellipse_b_input"
                     placeholder="b"
                     class="shadow-xl px-2 border-2 border-gray-700 rounded-md max-w-20"
                     type="text"
                   />
                   <span class="mr-3">cm</span>
                 </div>
-                <div>
-                  <input
-                    placeholder="h"
-                    class="shadow-xl px-2 border-2 border-gray-700 rounded-md max-w-20"
-                    type="text"
-                  />
-                  <span class="mr-3">cm</span>
-                </div>
+              </div>
+              <!-- display -->
+              <div>
+                <p>
+                  <span>
+                    a =
+                    <span id="Ellipse_a_input_show"></span>
+                    cm
+                  </span>
+                  <span class="ml-5">
+                    b =
+                    <span id="Ellipse_b_input_show"></span>
+                    cm
+                  </span>
+                </p>
+              </div>
+              <div class="mb-2">
+                <p>
+                  Area:
+                  <span id="displayOfEllipseCalcilation"> 0 </span> cm<sup
+                    >2</sup
+                  >
+                </p>
               </div>
               <div class="lg:mx-3 mx-7">
                 <button
+                  onclick="EllipseCall()"
                   class="btn btn-secondary w-full text-xl -mb-5 btn-outline"
                 >
                   Calculation
@@ -264,7 +388,9 @@
           </div>
         </div>
         <!-- area calculation container -->
-        <div class="lg:w-96 md:w-72 w-auto border-2 border-gray-700 rounded-md">
+        <div
+          class="lg:w-96 md:w-72 max-w-[385px] border-2 border-gray-700 rounded-md"
+        >
           <h3 class="text-3xl text-center p-4">Area calculation</h3>
         </div>
       </div>
